@@ -62,7 +62,7 @@ document.getElementById('search').addEventListener('click', function () {
     const geocodeUrl = `https://geocode.maps.co/search?q=${encodeURI(address)}`;
 
     fetch(geocodeUrl)
-        .then(response => response.json())
+        .then(resp => resp.json())
         .then(data => {
             // Extract latitude and longitude from the response
             const latitude = data[0].lat;
@@ -73,7 +73,7 @@ document.getElementById('search').addEventListener('click', function () {
 
             return fetch(satelliteUrl);
         })
-        .then(response => response.json())
+        .then(resp => resp.json())
         .then(data => {
             // Extract information about satellite passes
             const riseTime = new Date(data[0].rise.utc_datetime);
@@ -96,6 +96,8 @@ function displaySatelliteInfo(riseTime, culminationTime, setTime) {
 
     // Display information on the DOM
     const infoContainer = document.createElement('div');
+    const mainContent = document.querySelector('.content')
+    infoContainer.className = 'content2';
     infoContainer.innerHTML = `
         <h2>Satellite Pass Information</h2>
         <p>Rise Time: ${riseTimeString}</p>
@@ -103,5 +105,5 @@ function displaySatelliteInfo(riseTime, culminationTime, setTime) {
         <p>Set Time: ${setTimeString}</p>
     `;
 
-    document.body.appendChild(infoContainer);
+    mainContent.appendChild(infoContainer);
 }

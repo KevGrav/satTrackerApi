@@ -1,6 +1,6 @@
 * {
     font-family: 'Roboto', sans-serif;
-    color: #03045e;
+    color: black;
 }
 
 body {
@@ -25,20 +25,32 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #00b4d8;
+    background-image: url('Satellite_scans_Earth.jpg');
+    background-size: cover;
+    padding: 0 24px;
+}
+
+.content2 {
+    width: fit-content;
+    margin: auto;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    background-color: #90e0ef;
+    align-items: center;
     padding: 0 24px;
 }
 
 .section {
     border-radius: 3px;
     width: fit-content;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     background-color: #90e0ef;
 }
 
 .row {
     display: flex;
-    margin: 12px 24px;
+    margin: 12px 40px;
     line-height: 24px;
     text-align: center;
     justify-content: space-between;
